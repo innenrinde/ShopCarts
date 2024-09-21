@@ -1,0 +1,26 @@
+{
+  "name": "shopcart",
+  "version": "1.0.0",
+  "description": "compare different types of shopping carts",
+  "main": "carts/level1-cart1.js",
+  "scripts": {
+    "test": "vitest --globals"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/innenrinde/shopcarts.git"
+  },
+  "keywords": [
+    "shop",
+    "cart"
+  ],
+  "author": "Adrian Vlad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/innenrinde/shopcarts/issues"
+  },
+  "homepage": "https://github.com/innenrinde/shopcarts#readme",
+  "devDependencies": {
+    "vitest": "^2.1.1"
+  }
+}
