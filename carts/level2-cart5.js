@@ -1,6 +1,12 @@
-
+/**
+ * Shop cart with discount and shipping
+ */
 class ShopCart {
 
+  /**
+   * Cart content
+   * @type {{ products: [], discount: {}, shipping: {} }}
+   */
   #cart = {};
   
   constructor(cart) {
@@ -17,7 +23,9 @@ class ShopCart {
   
 }
 
-
+/**
+ * Manage products list
+ */
 class ProductsList {
   
   #total = null;
@@ -47,7 +55,9 @@ class ProductsList {
   }
 }
 
-
+/**
+ * Manage discount
+ */
 class Discount {
   
   #value = null;
@@ -90,6 +100,9 @@ class Discount {
   }
 }
 
+/**
+ * Manage shipping
+ */
 class Shipping {
   
   #value = 0;
@@ -103,6 +116,4 @@ class Shipping {
   }
 }
 
-let shopCart = new ShopCart(cart);
-
-console.log("Total cart price: " + shopCart.total + " EUR");
+export { ShopCart };

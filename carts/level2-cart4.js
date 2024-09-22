@@ -1,5 +1,8 @@
+/**
+ * Cart as object with mutual logic for discount and shipping
+ * @type {{ products: [], discount: {}, shipping: {} }}
+ */
 let cart = {};
-
 
 Object.defineProperty(cart, 'total', {
   get: function() {
@@ -12,10 +15,21 @@ Object.defineProperty(cart, 'total', {
   }
 });
 
+/**
+ * Manage list of products
+ */
 class ProductsList {
-  
+
+  /**
+   * Total amount
+   * @type {Number}
+   */
   #total = null;
-  
+
+  /**
+   * Products list with unit price and quantity
+   * @type {Array}
+   */
   #products = [];
   
   constructor({ products }) {
@@ -41,13 +55,27 @@ class ProductsList {
   }
 }
 
-
+/**
+ * Manage discount value
+ */
 class Discount {
-  
+
+  /**
+   * Discount value
+   * @type {number|null}
+   */
   #value = null;
-        
+
+  /**
+   * List of products
+   * @type {Array}
+   */
   #products = [];
-        
+
+  /**
+   * Init discount data
+   * @type {Object}
+   */
   #discount = {};      
   
   constructor({ products, discount }) {
@@ -84,8 +112,14 @@ class Discount {
   }
 }
 
+/**
+ * Manage shipping tax
+ */
 class Shipping {
-  
+
+  /**
+   * @type {number}
+   */
   #value = 0;
   
   constructor({ shipping }) {

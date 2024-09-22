@@ -1,5 +1,8 @@
+/**
+ * Cart as object with mutual logic for discount and shipping
+ * @type {{ products: [], discount: {}, shipping: {} }}
+ */
 let cart = {};
-
 
 Object.defineProperty(cart, 'total', {
   get: function() {
@@ -12,7 +15,10 @@ Object.defineProperty(cart, 'total', {
   }
 });
 
-
+/**
+ * Process products list to get amount value
+ * @param {Array} products
+ */
 function ProductsList({ products }) {
   let total = 0;
   products.forEach(product => {
@@ -23,6 +29,11 @@ function ProductsList({ products }) {
   this.value = () => total;
 }
 
+/**
+ * Manage discount
+ * @param {Array} products
+ * @param {Object} discount
+ */
 function Discount({ products, discount }) {
   let value = 0;
   
@@ -44,6 +55,10 @@ function Discount({ products, discount }) {
   this.value = () => value;
 }
 
+/**
+ * Manage shipping tax
+ * @param {Object} shipping
+ */
 function Shipping({ shipping }) {
     let value = shipping.value ?? 0;
   

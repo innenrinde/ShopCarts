@@ -1,38 +1,6 @@
-let cart = {
-  products: [
-    {
-      name: "Prod 1",
-      price: 100,
-	  promotion: 95,
-      quantity: 1,
-      tva: 9
-    },
-    {
-      name: "Prod 2",
-      price: 10,
-      quantity: 2,
-      tva: 9
-    },
-    {
-      name: "Prod 3",
-      price: 20,
-	  promotion: 17,
-      quantity: 3,
-      tva: 19
-    }
-  ],
-  discount: {
-    name: "Promo code ABCD",
-    value: 10,
-    percent: true
-  },
-  shipping: {
-    name: "Big Faster",
-    value: 15
-  }
-};
-
-
+/**
+ * Shop cart with discount and shipping
+ */
 class ShopCart {
   
   #total = 0;
@@ -79,7 +47,9 @@ class ShopCart {
   
 }
 
-
+/**
+ * Manage products list
+ */
 class ProductsList {
   
   #total = null;
@@ -99,7 +69,9 @@ class ProductsList {
   }
 }
 
-
+/**
+ * Manage discount
+ */
 class Discount {
   
   #value = null;
@@ -132,6 +104,9 @@ class Discount {
   }
 }
 
+/**
+ * Manage shipping
+ */
 class Shipping {
   
   #value = 0;
@@ -145,6 +120,4 @@ class Shipping {
   }
 }
 
-let shopCart = new ShopCart(cart);
-
-console.log("Total cart price: " + shopCart.total + " EUR");
+export { ShopCart };

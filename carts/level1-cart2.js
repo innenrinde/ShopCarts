@@ -1,3 +1,8 @@
+/**
+ * Extended cart with discount and shipping tax part of total price
+ * @param {Object} cart
+ * @return {number}
+ */
 function total(cart) {
   let products = cart.products ?? [];
   let discount = cart.discount ?? {};
